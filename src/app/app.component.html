@@ -1,21 +1,273 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+     <!--Header Start-->
+        
+     
 
-<router-outlet></router-outlet>
+<!-- <div id="player">
+ <p>Speed: x{{animationSpeed}}</p>
+ <div class="range-container">
+   <input #range type="range" value="1" min="0" max="3" step="0.5"
+     (change)="setSpeed(range.value)">
+ </div>
+ <button (click)="stop()">stop</button>
+ <button (click)="pause()">pause</button>
+ <button (click)="play()">play</button>
+
+
+</div> -->
+
+<div *ngIf="showanimation" style="width:100%;height:100%;">
+    <lottie-animation-view
+    [options]="lottieConfig"
+    width="100%"
+    height="100%"
+    (animCreated)="handleAnimation($event)">
+    </lottie-animation-view>
+</div>
+
+            <!-- <div class="header-top">
+                <div class="container">
+                    <div class="header-container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-7">
+                                <div class="header-contact">
+                                    <span class="email">Email: admin@bootexperts.com </span> / <span class="phone">Phone: +234.546.657</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-5">
+                                <div class="currency-language">
+                                    <div class="currency-menu">
+                                        <ul>
+                                            <li><a href="#">USD <i class="fa fa-angle-down"></i></a>
+                                                <ul class="currency-dropdown">
+                                                    <li><a href="#">EUR</a></li>
+                                                    <li><a href="#">USD</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="language-menu">
+                                        <ul>
+                                            <li><a href="#">English <i class="fa fa-angle-down"></i></a>
+                                                <ul class="language-dropdown">
+                                                    <li><a href="#">French</a></li>
+                                                    <li><a href="#">English</a></li>
+                                                    <li><a href="#">German</a></li>
+                                                    <li><a href="#">Arabic</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="account-menu">
+                                        <ul>
+                                            <li><a href="account.html">My Account <i class="fa fa-angle-down"></i></a>
+                                                <ul class="account-dropdown">
+                                                    <li><a href="wishlist.html">My Wishlist</a></li>
+                                                    <li><a href="cart.html">My Cart</a></li>
+                                                    <li><a href="checkout.html">Checkout</a></li>
+                                                    <li><a href="blog.html">Blog</a></li>
+                                                    <li><a href="account.html">Log In</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div> -->
+            <!-- <div class="header-main">
+                <div class="container">
+                    <div class="header-content">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                <div class="logo">
+                                    <a href="index.html"><img src="assets/img//logo/logo.png" alt="MOZAR"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-8">
+                                <div id="search-category">
+                                    <form class="search-box" action="#" method="post">
+                                        <div class="search-categories">
+                                            <div class="search-cat">
+                                                <select class="category-items " name="category">
+                                                    <option>All Categories</option>
+                                                    <option>Women</option>
+                                                    <option>Men</option>
+                                                    <option>Jewllery</option>
+                                                    <option>Bootees Bags</option>
+                                                    <option>Clothing</option>
+                                                    <option>Footwear</option>
+                                                    <option>T-Shirts</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <input type="search" placeholder="Search here..." id="text-search" name="search">
+                                        <button id="btn-search-category" type="submit">
+                                            <i class="icon-search"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-4">
+                                <ul class="header-r-cart">
+                                    <li><a class="cart" href="cart.html">My Cart:2 items</a>
+                                        <div class="mini-cart-content">
+                                            <div class="cart-products-list">
+                                                <div class="cart-products">
+                                                    <div class="cart-image">
+                                                        <a href="#"><img src="assets/img/cart/1.jpg" alt=""></a>
+                                                    </div>
+                                                    <div class="cart-product-info">
+                                                        <a href="#" class="product-name"> Donec ac tempus </a>
+                                                        <a class="edit-product">Edit item</a>
+                                                        <a class="remove-product">Remove item</a>
+                                                        <div class="price-times">
+                                                            <span class="quantity"><strong> 1 x</strong></span>
+                                                            <span class="p-price">$100.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-products">
+                                                    <div class="cart-image">
+                                                        <a href="#"><img src="assets/img/cart/2.jpg" alt=""></a>
+                                                    </div>
+                                                    <div class="cart-product-info">
+                                                        <a href="#" class="product-name">Quisque in arcu </a>
+                                                        <a class="edit-product">Edit item</a>
+                                                        <a class="remove-product">Remove item</a>
+                                                        <div class="price-times">
+                                                            <span class="quantity"><strong> 1 x</strong></span>
+                                                            <span class="p-price">$260.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cart-price-list">
+                                                <p class="price-amount">SUBTotal : <span>$356.15</span> </p>
+                                                <div class="cart-buttons">
+                                                    <a href="checkout.html">Checkout</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div> -->
+            <!--Mainmenu Start-->
+    
+<router-outlet [hidden]="showanimation" >        </router-outlet><!--Slider Area Start-->
+        <!-- <div class="slider-area">
+            <div class="preview-2">
+                <div id="nivoslider" class="slides">	
+                    <a href="#"><img src="assets/img/slider/slider-1.jpg" alt="" title="#slider-1-caption1"/></a>
+                    <a href="#"><img src="assets/img/slider/slider-3.jpg" alt="" title="#slider-1-caption2"/></a>
+                    <a href="#"><img src="assets/img/slider/slider-2.jpg" alt="" title="#slider-1-caption3"/></a>
+                </div> 
+                <div id="slider-1-caption1" class="nivo-html-caption nivo-caption">
+                    <div class="timethai" style=" 
+                        position:absolute;
+                        bottom:0;
+                        left:0;
+                        background-color:rgba(224, 53, 80, 0.6);
+                        height:3px;
+                        -webkit-animation: myfirst 5000ms ease-in-out;
+                        -moz-animation: myfirst 5000ms ease-in-out;
+                        -ms-animation: myfirst 5000ms ease-in-out;
+                        animation: myfirst 5000ms ease-in-out;
+				        ">
+				    </div>
+                    <div class="banner-content slider-1 hidden-xs">
+                        <div class="text-content">
+                            <h1 class="title1"><span>collections</span></h1>										
+                            <h2 class="title2" ><span>2015 new design</span></h2>																	<h3 class="title3">style Mozar always loved men in whatever fashion season spring  winter.</h3>																																					<div class="banner-readmore">
+                                <a href="#" title="Read more">Read more</a>	
+                            </div>
+                        </div>
+                    </div>
+                </div>		
+                <div id="slider-1-caption2" class="nivo-html-caption nivo-caption">
+                    <div class="timethai" style=" 
+                        position:absolute;
+                        bottom:0;
+                        left:0;
+                        background-color:rgba(224, 53, 80, 0.6);
+                        height:3px;
+                        -webkit-animation: myfirst 5000ms ease-in-out;
+                        -moz-animation: myfirst 5000ms ease-in-out;
+                        -ms-animation: myfirst 5000ms ease-in-out;
+                        animation: myfirst 5000ms ease-in-out;
+				        ">
+				    </div>
+                    <div class="banner-content slider-2 hidden-xs">
+                        <div class="text-content">  
+                            <h1 class="title1"><span>hot products</span></h1>										
+                            <h2 class="title2" ><span>color patterns for men</span></h2>															<h3 class="title3">create new trends for 2015, we generated mutant products for boys personality</h3>		     
+                            <div class="banner-readmore">
+                                <a href="#" title="Read more">Read more</a>	
+                            </div>	
+                        </div>
+                    </div>
+                </div> 	
+                <div id="slider-1-caption3" class="nivo-html-caption nivo-caption">
+                    <div class="timethai" style=" 
+                        position:absolute;
+                        bottom:0;
+                        left:0;
+                        background-color:rgba(224, 53, 80, 0.6);
+                        height:3px;
+                        -webkit-animation: myfirst 5000ms ease-in-out;
+                        -moz-animation: myfirst 5000ms ease-in-out;
+                        -ms-animation: myfirst 5000ms ease-in-out;
+                        animation: myfirst 5000ms ease-in-out;
+				        ">
+				    </div>
+                    <div class="banner-content slider-3 hidden-xs">
+                        <div class="text-content">  
+                            <h1 class="title1"><span>eyewear collection</span></h1>								
+                            <h2 class="title2" ><span>perfect  model 2015</span></h2>																<h3 class="title3">HOT summer fashion glasses accepted competitive price free shipping nationwide</h3>				   
+                            <div class="banner-readmore">
+                                <a href="#" title="Read more">Read more</a>	
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div> -->
+        <!--End of Slider Area-->
+        <!--Banner Area Start-->
+      
+        <!--End of Quickview Product-->	
+        <!--Newsletter Popup Start-->
+        <!-- <div id="newsletter-popup-conatiner">
+            <div id="newsletter-pop-up">
+                <span class="hide-popup">Close</span>
+                <div class="subscribe-pop-up">
+                    <div class="title-subscribe">
+                        <h1>NEWSLETTER</h1>
+                    </div>
+                    <form id="newsletter-form" method="post" action="#">
+                        <div class="content-subscribe">
+                            <div class="form-subscribe-header">
+                                <label>Subcribe to the Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat..</label>
+                            </div>
+                            <div class="input-box">
+                               <input type="text" class="input-text newsletter-subscribe" title="Sign up for our newsletter" name="email">
+                            </div>
+                            <div class="actions">
+                                <button class="button-subscribe" title="Subscribe" type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="subscribe-bottom">
+                        <input type="checkbox" id="dont_show">
+                        <label for="dont_show">Don't show this popup again</label>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+       
+<!-- <router-outlet></router-outlet> -->
