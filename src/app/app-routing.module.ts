@@ -5,6 +5,8 @@ const routes: Routes = [
   {path: '',
    loadChildren: './pages/container.module#ContainerModule'
   },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
+
 ];
 
 @NgModule({
